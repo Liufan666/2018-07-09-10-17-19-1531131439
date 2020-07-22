@@ -10,7 +10,8 @@ public class Student extends Person{
 
     @Override
     public String introduce() {
-        String str = "My name is "+name+". I am "+age+" years old. I am a Student. I am at Class "+klass+".";
+        String str = basicIntroduce();
+        str += " I am a Student. I am at Class "+klass+".";
         return str;
     }
 

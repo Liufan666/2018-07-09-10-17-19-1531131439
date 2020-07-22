@@ -7,7 +7,8 @@ public class Worker extends Person{
 
     @Override
     public String introduce() {
-        String str = "My name is "+name+". I am "+age+" years old. I am a Worker. I have a job.";
+        String str = basicIntroduce();
+        str += " I am a Worker. I have a job.";
         return str;
     }
 

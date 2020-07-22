@@ -1,4 +1,20 @@
 package practice04;
 
-public class Student {
+public class Student extends Person{
+    protected int klass;
+
+    public Student(String name, int age, int klass) {
+        super(name, age);
+        this.klass = klass;
+    }
+
+    @Override
+    public String introduce() {
+        String str = "My name is "+name+". I am "+age+" years old. I am a Student. I am at Class "+klass+".";
+        return str;
+    }
+
+    public int getKlass() {
+        return klass;
+    }
 }

@@ -19,7 +19,7 @@ public class Klass {
     public boolean isIn(Student student, List<Klass> classes) {
         boolean flag = false;
         for(int i=0;i<classes.size();i++){
-            if(student.klass.getNumber()==classes.get(i).getNumber()){
+            if(student.getKlass().getNumber()==classes.get(i).getNumber()){
                 flag = true;
             }
         }

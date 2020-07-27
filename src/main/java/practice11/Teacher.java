@@ -2,12 +2,15 @@ package practice11;
 
 import java.util.List;
 
-public class Teacher extends Person {
+public class Teacher extends Person implements Observer{
     protected List<Klass> classes;
 
     public Teacher(int id, String name, int age, List<Klass> classes) {
         super(id, name, age);
         this.classes = classes;
+        classes.forEach(klass -> {
+            klass.registerObserver(this);
+        });
     }
 
     public Teacher(int id, String name, int age) {
@@ -53,5 +56,13 @@ public class Teacher extends Person {
         }
         return str;
 
+    }
+
+    public void update(Student student) {
+        System.out.print(String.format("I am %s. I know %s has joined Class 2.",this.getName(),student.getName())+"\n");
+    }
+    @Override
+    public void updateWithLeader(Student student) {
+        System.out.print(String.format("I am %s. I know %s become Leader of Class 2.",this.getName(),student.getName())+"\n");
     }
 }

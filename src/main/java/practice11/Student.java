@@ -1,7 +1,8 @@
 package practice11;
 
 
-public class Student extends Person{
+
+public class Student extends Person implements Obserable {
     protected Klass klass;
 
     public Student(int id, String name, int age, Klass klass) {
@@ -11,6 +12,10 @@ public class Student extends Person{
 
     public Klass getKlass() {
         return klass;
+    }
+
+    public void setKlass(Klass klass) {
+        this.klass = klass;
     }
 
     @Override
@@ -23,5 +28,10 @@ public class Student extends Person{
             str += " I am a Student. I am at Class "+klass.getNumber()+".";
         }
         return str;
+    }
+
+    @Override
+    public void update() {
+
     }
 }
